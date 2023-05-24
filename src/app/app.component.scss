@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  gap: var(--gap-2);
+  height: 100%;
+  width: 100%;
+
+  ::ng-deep router-outlet + * { //main content
+    width: 100%;
+    overflow: auto;
+
+    padding-right: var(--gap-2);
+    padding-bottom: var(--bottom-screen-gap);
+    padding-top: var(--top-screen-gap);
+  }
+}

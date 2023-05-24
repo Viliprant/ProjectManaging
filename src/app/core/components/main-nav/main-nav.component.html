@@ -1,0 +1,18 @@
+<ng-container>
+  <div class="brand-icon">
+    <mat-icon fontIcon="build_circle"></mat-icon>
+  </div>
+
+  <div class="nav-items">
+    <div class="up">
+      <a routerLink="/project" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" class="nav-item"><mat-icon fontIcon="home"></mat-icon></a>
+      <a routerLink="/task" routerLinkActive="active" class="nav-item"><mat-icon fontIcon="event_note"></mat-icon></a>
+      <a routerLink="/project/add" routerLinkActive="active" class="nav-item"><mat-icon fontIcon="add"></mat-icon></a>
+      <a routerLink="/search" routerLinkActive="active" class="nav-item"><mat-icon fontIcon="search"></mat-icon></a>
+    </div>
+    <div class="down">
+      <a routerLink="/compagny" routerLinkActive="active" class="nav-item"><mat-icon fontIcon="domain"></mat-icon></a>
+      <a routerLink="/settings" routerLinkActive="active" class="nav-item"><mat-icon fontIcon="settings"></mat-icon></a>
+    </div>
+  </div>
+</ng-container>

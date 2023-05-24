@@ -1,0 +1,30 @@
+:root{
+  --background-color: #303030;
+  --main-color: white;
+  --dark-grey: #585858;
+  --medium-grey: #808080;
+  --light-grey: #C6C6C6;
+  --accent-color: #AD73F6;
+
+  --selected-background: var(--medium-grey);
+  --selected-color: var(--accent-color);
+  --hover-background: var(--dark-grey);
+
+  --gap-1: 8px;
+  --gap-2: 16px;
+  --gap-3: 24px;
+  --gap-4: 32px;
+  --gap-5: 40px;
+  --gap-6: 48px;
+  --gap-7: 56px;
+  --gap-8: 64px;
+  --gap-9: 72px;
+
+  --nav-icon-size: var(--gap-3);
+  --nav-icon-color: var(--main-color);
+
+  --navbar-width: var(--gap-7);
+  --top-screen-gap: var(--gap-3);
+  --bottom-screen-gap: var(--gap-9);
+}
+
