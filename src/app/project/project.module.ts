@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListProjectComponent } from './list-project/list-project.component';
 import { ProjectRoutingModule } from './project-routing.module';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { CoreModule } from '../_core/core.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { AddProjectComponent } from './add-project/add-project.component';
   ],
   imports: [
     CommonModule,
-    ProjectRoutingModule
+    CoreModule,
+    ProjectRoutingModule,
   ],
 })
 export class ProjectModule { }

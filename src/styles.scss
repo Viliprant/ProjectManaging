@@ -32,10 +32,30 @@ html,body{
 body{
   background-color: var(--background-color);
   color: var(--main-color);
-  font-family: Roboto, "Helvetica Neue", sans-serif;;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+input{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .mat-icon{
   width: auto !important;
   height: auto !important;
+}
+
+.flex{
+  display: flex;
+
+  &.column{
+    flex-direction: column;
+  }
+
+  &.space-between:not(.column){
+    justify-content: space-between;
+  }
+
+  &.column.space-between{
+    align-content: space-between;
+  }
 }

@@ -1,0 +1,8 @@
+<div class="flex column">
+  <label for="select">{{ label }}</label>
+  <select (change)="onChange($event)" name="select">
+    <option *ngFor="let option of options" [value]="option.value" [selected]="option.default">
+      {{ option.label }}
+    </option>
+  </select>
+</div>

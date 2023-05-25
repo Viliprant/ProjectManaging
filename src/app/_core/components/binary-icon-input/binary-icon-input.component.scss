@@ -1,0 +1,13 @@
+:host{
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark-grey);
+    border-radius: var(--border-radius);
+    padding: var(--gap-0);
+    min-height: var(--gap-5);
+    min-width: var(--gap-5);
+  }
+
+}
