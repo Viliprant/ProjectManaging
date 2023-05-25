@@ -1,0 +1,40 @@
+<div class="flex space-between container-filters">
+  <div class="left">
+    <app-text-input
+      class="search-bar"
+      [placeholder]="searchPlaceholder"
+      [value]="searchValue"
+      (valueChange)="onSearchChange($event)"
+    />
+  </div>
+
+  <div class="flex right">
+    <div *ngIf="filterOptions.length > 0">
+      <app-dropdown-input
+        [value]="filterOptionsValue"
+        (valueChange)="onFilterChange($event)"
+        [options]="filterOptions"
+        label="Filtrer:"
+      />
+    </div>
+    <div *ngIf="orderOptions.length > 0">
+      <app-dropdown-input
+        [value]="orderOptionsValue"
+        (valueChange)="onOrderChange($event)"
+        [options]="orderOptions"
+        label="Trier:"
+      />
+    </div>
+    <div
+      class="direction-container"
+      *ngIf="orderOptions.length > 0 && orderByDirection.length === 2"
+    >
+      <app-binary-icon-input
+        [trueValue]="orderByDirection[0]"
+        [falseValue]="orderByDirection[1]"
+        [binaryValue]="orderByDirectionValue"
+        (binaryValueChange)="onDirectionChange($event)"
+      />
+    </div>
+  </div>
+</div>

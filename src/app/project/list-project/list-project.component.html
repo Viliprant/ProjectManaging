@@ -1,17 +1,12 @@
-<div class="flex space-between container-filters">
-  <div class="left">
-    <app-text-input class="search-bar" placeholder="Rechercher un nom..." [(value)]="searchString" />
-  </div>
+<app-header-filter
+  [filterOptions]="filterOptions"
+  [orderOptions]="orderOptions"
+  [orderByDirection]="orderByDirection"
 
-  <div class="flex right">
-    <div>
-      <app-dropdown-input [(value)]="filterValue" [options]="filterOptions" label="Filtrer:"/>
-    </div>
-    <div>
-      <app-dropdown-input [(value)]="orderValue" [options]="orderOptions" label="Trier:"/>
-    </div>
-    <div class="direction-container">
-      <app-binary-icon-input [trueValue]="orderByDirection[0]" [falseValue]="orderByDirection[1]" [(binaryValue)]="directionValue" />
-    </div>
-  </div>
-</div>
+  [(searchValue)]="searchValue"
+  [(filterOptionsValue)]="filterOptionsValue"
+  [(orderOptionsValue)]="orderOptionsValue"
+  [(orderByDirectionValue)]="orderByDirectionValue"
+
+  searchPlaceholder="Rechercher un nom..."
+/>

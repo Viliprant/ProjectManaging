@@ -8,11 +8,6 @@ import { DropdownOption } from 'src/app/_core/models/dropdown-option';
   styleUrls: ['./list-project.component.scss']
 })
 export class ListProjectComponent {
-  public searchString: string = '';
-  public filterValue?: DropdownOption = undefined;
-  public orderValue?: DropdownOption = undefined;
-  public directionValue?: BinaryIconValue;
-
   public filterOptions: DropdownOption[] = [
     {
       label: '',
@@ -76,7 +71,8 @@ export class ListProjectComponent {
     }
   ]
 
-  ngOnInit(){
-    this.directionValue = this.orderByDirection[0];
-  }
+  public searchValue: string = '';
+  public filterOptionsValue?: DropdownOption = undefined;
+  public orderOptionsValue?: DropdownOption = undefined;
+  public orderByDirectionValue?: BinaryIconValue = undefined;
 }

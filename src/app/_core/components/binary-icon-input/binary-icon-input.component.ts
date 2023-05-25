@@ -10,18 +10,21 @@ export class BinaryIconInputComponent {
   @Input() trueValue?: BinaryIconValue = undefined;
   @Input() falseValue?: BinaryIconValue = undefined;
   @Input() binaryValue?: BinaryIconValue = undefined;
-  @Output() binaryValueChange: EventEmitter<BinaryIconValue> = new EventEmitter();
+  @Output() binaryValueChange: EventEmitter<BinaryIconValue> =
+    new EventEmitter();
 
-  public onClick(){
-    if(this.binaryValue === this.trueValue){
+  public onClick() {
+    if (this.binaryValue === this.trueValue) {
       this.binaryValueChange.emit(this.falseValue);
-    }
-    else{
+    } else {
       this.binaryValueChange.emit(this.trueValue);
     }
   }
 
-  ngOnInit(){
-    this.binaryValue = this.trueValue;
+  ngOnInit() {
+    // Otherwise throwing ExpressionChangedAfterItHasBeenCheckedError
+    setTimeout(() => {
+      this.binaryValueChange.emit(this.trueValue);
+    }, 0);
   }
 }

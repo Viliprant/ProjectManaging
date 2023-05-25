@@ -4,7 +4,7 @@ import { DropdownOption } from '../../models/dropdown-option';
 @Component({
   selector: 'app-dropdown-input',
   templateUrl: './dropdown-input.component.html',
-  styleUrls: ['./dropdown-input.component.scss']
+  styleUrls: ['./dropdown-input.component.scss'],
 })
 export class DropdownInputComponent {
   @Input() label: string = 'Pas précisé';
@@ -12,10 +12,21 @@ export class DropdownInputComponent {
   @Input() value?: DropdownOption = undefined;
   @Output() valueChange: EventEmitter<DropdownOption> = new EventEmitter();
 
-  public onChange(event: Event){
+  public onChange(event: Event) {
     const target: HTMLInputElement = event.target as HTMLInputElement;
-    const selectedOption: DropdownOption | undefined = this.options.find((o) => o.value === target.value);
+    const selectedOption: DropdownOption | undefined = this.options.find(
+      (o) => o.value === target.value
+    );
 
     this.valueChange.emit(selectedOption);
+  }
+
+  ngOnInit() {
+    const newValue = this.options.find((o) => o.default === true);
+
+    // Otherwise throwing ExpressionChangedAfterItHasBeenCheckedError
+    setTimeout(() => {
+      this.valueChange.emit(newValue);
+    }, 0);
   }
 }
